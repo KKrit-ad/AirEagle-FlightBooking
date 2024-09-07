@@ -10,13 +10,16 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000; // ใช้ค่าจาก .env
 
-// ตั้งค่า CORS ให้อนุญาตเฉพาะพอร์ต 5173
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, // ใช้ค่าจาก .env
+    origin: [
+      process.env.FRONTEND_URL,
+      "https://aireagle-flightbooking-gogh6n94a-sinnermanxs-projects.vercel.app",
+    ], // เพิ่ม Vercel URL
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true, // ถ้าคุณต้องการอนุญาต cookies
   })
 );
-
 app.use(bodyParser.json());
 
 app.use("/api", bookRoutes);
