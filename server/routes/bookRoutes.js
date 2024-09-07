@@ -5,8 +5,8 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
   service: "hotmail",
   auth: {
-    user: process.env.HOTMAIL_USER, // ใช้ค่าจาก .env
-    pass: process.env.HOTMAIL_PASS, // ใช้ค่าจาก .env
+    user: process.env.HOTMAIL_USER, 
+    pass: process.env.HOTMAIL_PASS, 
   },
 });
 
@@ -37,9 +37,9 @@ router.post("/book", (req, res) => {
     `,
     attachments: [
       {
-        filename: "book-logo.png", // ชื่อไฟล์รูปภาพ
-        path: "logo.png", // ที่อยู่ไฟล์รูปภาพ
-        cid: "booklogo@aireagle.com", // ใช้สำหรับเชื่อมโยงกับ <img src="cid:...">
+        filename: "book-logo.png", 
+        path: "logo.png", 
+        cid: "booklogo@aireagle.com", 
       },
     ],
   };
@@ -84,9 +84,9 @@ router.post("/book/flight", (req, res) => {
     `,
     attachments: [
       {
-        filename: "flight-logo.png", // ชื่อไฟล์รูปภาพ
-        path: "logo.png", // ที่อยู่ไฟล์รูปภาพ
-        cid: "flightlogo@aireagle.com", // ใช้สำหรับเชื่อมโยงกับ <img src="cid:...">
+        filename: "flight-logo.png", 
+        path: "logo.png", 
+        cid: "flightlogo@aireagle.com", 
       },
     ],
   };
