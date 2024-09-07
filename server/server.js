@@ -1,0 +1,26 @@
+require("dotenv").config(); // เพิ่มบรรทัดนี้เพื่อโหลด .env
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const flightRoutes = require("./routes/flight");
+const bookRoutes = require("./routes/bookRoutes"); // เพิ่มเส้นทางสำหรับ bookRoutes
+
+const cors = require("cors");
+
+const app = express();
+const port = process.env.PORT || 5000; // ใช้ค่าจาก .env
+
+// ตั้งค่า CORS ให้อนุญาตเฉพาะพอร์ต 5173
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL, // ใช้ค่าจาก .env
+  })
+);
+
+app.use(bodyParser.json());
+
+app.use("/api", bookRoutes);
+app.use("/api/flight", flightRoutes);
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});

@@ -1,0 +1,196 @@
+/* General Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(248, 249, 250, 1); /* สีพื้นหลังปกติ */
+  padding: 10px 20px;
+  height: 60px;
+  position: fixed; /* ทำให้ Navbar คงที่ที่ด้านบน */
+  top: 0;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่ม transition สำหรับการเปลี่ยนสีพื้นหลังและการเลื่อน */
+  z-index: 1000;
+}
+
+.navbar-scrolled {
+  background-color: black; /* เปลี่ยนเป็นสีดำเมื่อเลื่อนขึ้น */
+  transform: translateY(0); /* แสดง Navbar เมื่อเลื่อนขึ้น */
+}
+
+/* Hide navbar when scrolling down */
+.navbar-hidden {
+  transform: translateY(-100%); /* ซ่อน Navbar เมื่อเลื่อนลง */
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 200px;
+  height: 200px; /* ขนาดโลโก้ */
+  margin-right: 10px; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+}
+
+.navbar-logo span {
+  font-family: "League Spartan", sans-serif;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2694b6; /* สีของชื่อบริษัท */
+}
+
+.navbar-links-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide navbar links by default on mobile */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+.navbar-scrolled .navbar-links a {
+  color: white; /* เปลี่ยนเป็นสีขาวเมื่อ Navbar เป็นสีดำ */
+}
+
+.navbar-links a:hover {
+  color: #2694b6;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: rgba(
+    248,
+    249,
+    250,
+    0.8
+  ); /* สีพื้นหลังของ Sidebar เมื่อเปิด */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-open .sidebar {
+  transform: translateX(0);
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar-links li {
+  margin: 10px 0;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-links a:hover {
+  background-color: #2694b6;
+  color: white;
+}
+
+.sidebar-signup {
+  background-color: #135768;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+/* Sidebar Toggle Styles */
+.sidebar-toggle {
+  display: none; /* ซ่อนปุ่มเมนูสำหรับหน้าจอใหญ่ */
+  background-color: #2694b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar-toggle:hover {
+  background-color: #002df7;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .navbar-logo span {
+    display: none;
+  }
+
+  .navbar-links {
+    display: none; /* ซ่อน navbar ขนาดปกติ */
+  }
+
+  .sidebar-toggle {
+    display: block; /* แสดงปุ่มเมนูเมื่อหน้าจอเล็กกว่า 768px */
+  }
+
+  .navbar-logo img {
+    width: 160px;
+    height: 160px; /* ขนาดโลโก้ */
+    margin-right: 10px; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+  }
+
+  .sidebar-open .navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 250px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}

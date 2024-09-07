@@ -1,0 +1,113 @@
+.main-info-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.main-info-airport-guide {
+  flex: 1;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  color: #0056b3;
+  text-align: center;
+}
+
+.main-info-guide-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-info-guide-option-button {
+  background-color: #2694b6;
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin: 5px 0;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.main-info-guide-option-button:hover {
+  background-color: #0056b3;
+}
+
+.main-info-carousel {
+  flex: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* ซ่อนส่วนที่อยู่นอกหน้าจอ */
+}
+
+.main-info-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* ทำให้ภาพเลื่อนนุ่มนวล */
+  width: 100%; /* กำหนดความกว้างให้ track */
+}
+
+.main-info-carousel-slide {
+  min-width: 100%; /* แต่ละ slide ต้องมีขนาดเท่ากับความกว้างของ container */
+  height: 300px;
+  position: relative;
+}
+
+.main-info-carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.main-info-carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main-info-carousel-control-button {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.main-info-carousel-control-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.main-info-carousel-control-button:first-of-type {
+  left: 10px;
+}
+
+.main-info-carousel-control-button:last-of-type {
+  right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-info-container {
+    flex-direction: column;
+  }
+
+  .main-info-airport-guide {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-info-carousel {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,188 @@
+const express = require("express");
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  const flightData = [
+    {
+      flightNumber: "AB123",
+      departure: {
+        date: "2024-10-01",
+        time: "15:00",
+        city: "New York",
+        country: "USA",
+        airport: "JFK Airport",
+      },
+      arrival: {
+        date: "2024-10-01",
+        time: "18:00",
+        city: "London",
+        country: "UK",
+        airport: "Heathrow Airport",
+      },
+      duration: 7,
+      airline: "FlyHigh Airlines",
+      classType: "Business",
+      price: 1200,
+      status: "On Time",
+    },
+    {
+      flightNumber: "CD456",
+      departure: {
+        date: "2024-10-05",
+        time: "10:30",
+        city: "Los Angeles",
+        country: "USA",
+        airport: "LAX Airport",
+      },
+      arrival: {
+        date: "2024-10-05",
+        time: "16:45",
+        city: "Paris",
+        country: "France",
+        airport: "Charles de Gaulle Airport",
+      },
+      duration: 11,
+      airline: "SkyJet",
+      classType: "Economy",
+      price: 850,
+      status: "Delayed",
+    },
+    {
+      flightNumber: "EF789",
+      departure: {
+        date: "2024-10-10",
+        time: "20:00",
+        city: "Tokyo",
+        country: "Japan",
+        airport: "Narita International Airport",
+      },
+      arrival: {
+        date: "2024-10-11",
+        time: "09:30",
+        city: "Sydney",
+        country: "Australia",
+        airport: "Sydney Airport",
+      },
+      duration: 9,
+      airline: "AeroWorld",
+      classType: "First",
+      price: 2500,
+      status: "On Time",
+    },
+    {
+      flightNumber: "GH012",
+      departure: {
+        date: "2024-11-01",
+        time: "09:15",
+        city: "Berlin",
+        country: "Germany",
+        airport: "Berlin Brandenburg Airport",
+      },
+      arrival: {
+        date: "2024-11-01",
+        time: "12:30",
+        city: "Rome",
+        country: "Italy",
+        airport: "Fiumicino Airport",
+      },
+      duration: 2,
+      airline: "EuroFly",
+      classType: "Economy",
+      price: 450,
+      status: "On Time",
+    },
+    {
+      flightNumber: "IJ345",
+      departure: {
+        date: "2024-11-05",
+        time: "16:00",
+        city: "Toronto",
+        country: "Canada",
+        airport: "Toronto Pearson International Airport",
+      },
+      arrival: {
+        date: "2024-11-05",
+        time: "20:45",
+        city: "Vancouver",
+        country: "Canada",
+        airport: "Vancouver International Airport",
+      },
+      duration: 5,
+      airline: "Maple Airlines",
+      classType: "Business",
+      price: 700,
+      status: "On Time",
+    },
+    {
+      flightNumber: "KL678",
+      departure: {
+        date: "2024-11-10",
+        time: "07:00",
+        city: "Sydney",
+        country: "Australia",
+        airport: "Sydney Airport",
+      },
+      arrival: {
+        date: "2024-11-10",
+        time: "15:00",
+        city: "Auckland",
+        country: "New Zealand",
+        airport: "Auckland Airport",
+      },
+      duration: 3,
+      airline: "DownUnder Air",
+      classType: "Economy",
+      price: 600,
+      status: "On Time",
+    },
+    {
+      flightNumber: "MN890",
+      departure: {
+        date: "2024-11-15",
+        time: "18:00",
+        city: "Mumbai",
+        country: "India",
+        airport: "Chhatrapati Shivaji Maharaj International Airport",
+      },
+      arrival: {
+        date: "2024-11-16",
+        time: "06:00",
+        city: "Dubai",
+        country: "UAE",
+        airport: "Dubai International Airport",
+      },
+      duration: 3.5,
+      airline: "AirIndia",
+      classType: "First",
+      price: 1800,
+      status: "Delayed",
+    },
+    {
+      flightNumber: "OP901",
+      departure: {
+        date: "2024-12-01",
+        time: "11:00",
+        city: "São Paulo",
+        country: "Brazil",
+        airport:
+          "São Paulo/Guarulhos–Governador André Franco Montoro International Airport",
+      },
+      arrival: {
+        date: "2024-12-01",
+        time: "16:30",
+        city: "Buenos Aires",
+        country: "Argentina",
+        airport: "Ministro Pistarini International Airport",
+      },
+      duration: 3,
+      airline: "SouthAmerican Airlines",
+      classType: "Economy",
+      price: 500,
+      status: "On Time",
+    },
+  ];
+
+  res.json(flightData);
+});
+
+module.exports = router;
