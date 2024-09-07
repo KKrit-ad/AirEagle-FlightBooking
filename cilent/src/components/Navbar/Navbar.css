@@ -1,26 +1,26 @@
-/* General Styles */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(248, 249, 250, 1); /* สีพื้นหลังปกติ */
+  background-color: rgba(248, 249, 250, 1); 
   padding: 10px 20px;
   height: 60px;
-  position: fixed; /* ทำให้ Navbar คงที่ที่ด้านบน */
+  position: fixed; 
   top: 0;
   width: 100%;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่ม transition สำหรับการเปลี่ยนสีพื้นหลังและการเลื่อน */
+  transition: background-color 0.3s ease, transform 0.3s ease;
   z-index: 1000;
 }
 
 .navbar-scrolled {
-  background-color: black; /* เปลี่ยนเป็นสีดำเมื่อเลื่อนขึ้น */
-  transform: translateY(0); /* แสดง Navbar เมื่อเลื่อนขึ้น */
+  background-color: black; 
+  transform: translateY(0); 
 }
 
-/* Hide navbar when scrolling down */
+
 .navbar-hidden {
-  transform: translateY(-100%); /* ซ่อน Navbar เมื่อเลื่อนลง */
+  transform: translateY(-100%); 
 }
 
 .navbar-logo {
@@ -30,8 +30,8 @@
 
 .navbar-logo img {
   width: 200px;
-  height: 200px; /* ขนาดโลโก้ */
-  margin-right: 10px; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+  height: 200px; 
+  margin-right: 10px; 
 }
 
 .navbar-logo span {
@@ -41,7 +41,7 @@
 .navbar-brand {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #2694b6; /* สีของชื่อบริษัท */
+  color: #2694b6; 
 }
 
 .navbar-links-container {
@@ -49,7 +49,7 @@
   align-items: center;
 }
 
-/* Hide navbar links by default on mobile */
+
 .navbar-links {
   list-style: none;
   display: flex;
@@ -69,14 +69,14 @@
   transition: color 0.3s ease;
 }
 .navbar-scrolled .navbar-links a {
-  color: white; /* เปลี่ยนเป็นสีขาวเมื่อ Navbar เป็นสีดำ */
+  color: white; 
 }
 
 .navbar-links a:hover {
   color: #2694b6;
 }
 
-/* Sidebar Styles */
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -88,7 +88,7 @@
     249,
     250,
     0.8
-  ); /* สีพื้นหลังของ Sidebar เมื่อเปิด */
+  ); 
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -136,9 +136,9 @@
   padding: 10px 20px;
 }
 
-/* Sidebar Toggle Styles */
+
 .sidebar-toggle {
-  display: none; /* ซ่อนปุ่มเมนูสำหรับหน้าจอใหญ่ */
+  display: none; 
   background-color: #2694b6;
   color: white;
   border: none;
@@ -157,7 +157,7 @@
   background-color: #002df7;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .navbar-links-container {
     display: flex;
@@ -170,17 +170,17 @@
   }
 
   .navbar-links {
-    display: none; /* ซ่อน navbar ขนาดปกติ */
+    display: none; 
   }
 
   .sidebar-toggle {
-    display: block; /* แสดงปุ่มเมนูเมื่อหน้าจอเล็กกว่า 768px */
+    display: block; 
   }
 
   .navbar-logo img {
     width: 160px;
-    height: 160px; /* ขนาดโลโก้ */
-    margin-right: 10px; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+    height: 160px; 
+    margin-right: 10px; 
   }
 
   .sidebar-open .navbar-links {
