@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       process.env.FRONTEND_URL,
-      "https://aireagle-flightbooking.vercel.app",
+      "https://aireagle-flightbooking-kkrit-ad-sinnermanxs-projects.vercel.app",
     ], 
     methods: "GET,POST,PUT,DELETE",
     credentials: true, 
